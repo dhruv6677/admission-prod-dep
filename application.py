@@ -11,6 +11,10 @@ application = Flask(__name__) # initializing a flask app
 def homePage():
     return render_template("index.html")
 
+
+
+
+
 @application.route('/predict',methods=['POST','GET']) # route to show the predictions in a web UI
 @cross_origin()
 def index():
@@ -28,7 +32,7 @@ def index():
                 research=1
             else:
                 research=0
-            filename = 'finalized_model.pickle'
+            filename = 'finalized_model1.pickle'
             loaded_model = pickle.load(open(filename, 'rb')) # loading the model file from the storage
             # predictions using the loaded model file
             prediction=loaded_model.predict([[gre_score,toefl_score,university_rating,sop,lor,cgpa,research]])
