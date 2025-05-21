@@ -1,28 +1,42 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
 <title>Search Page</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.tailwindcss.com"></script>
 {% endblock %}
 
 {% block body %}
-<div class="content">
-    <h1 style="text-align: center">Predict Your chances for Admission</h1>
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Predict Your Chances for Admission</h1>
 
-    <div class="form">
-        <form action="/predict" method="POST">
-            <input type="number" name="gre_score" id="gre_score" placeholder="GRE Score">
-            <input type="number" name="toefl_score" id="toefl_score" placeholder="TOEFL Score">
-            <input type="number" name="university_rating" id="university_rating" placeholder="University Rating">
-            <input type="number" name="sop" id="sop" placeholder="SOP Score">
-            <input type="number" name="lor" id="lor" placeholder="LOR Score">
-            <input type="number" name="cgpa" id="cgpa"placeholder="CGPA" step="any">
-            <select name="research" id="research">
-  <option value="yes">Yes</option>
-  <option value="no">No</option>
-</select>
-            <input type="submit" value="Predict">
+        <form action="/predict" method="POST" class="space-y-4">
+            <input type="number" name="gre_score" id="gre_score" placeholder="GRE Score"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            
+            <input required type="number" name="toefl_score" id="toefl_score" placeholder="TOEFL Score"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            
+            <input required type="number" name="university_rating" id="university_rating" placeholder="University Rating"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            
+            <input required type="number" name="sop" id="sop" placeholder="SOP Score"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            
+            <input required type="number" name="lor" id="lor" placeholder="LOR Score"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            
+            <input required type="number" name="cgpa" id="cgpa" placeholder="CGPA" step="any"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            
+            <select name="research" id="research"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <input type="submit" value="Predict"
+                class="w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition duration-200">
         </form>
     </div>
 </div>

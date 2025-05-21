@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Review Page</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-      <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body
+  class="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-8">
 
-  <div class="table-users">
-   <div class="header">Prediction</div>
-
-      <p>Your chance for admission is {{prediction}} percent</p>
-</div>
-
-
+  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-2xl p-12 text-center">
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-8">Prediction Result</h1>
+    <p class="text-3xl text-gray-700">
+      Your chance for admission is
+      <span class="text-5xl font-bold text-indigo-600">{{ prediction }}%</span>
+    </p>
+  </div>
 
 </body>
 
